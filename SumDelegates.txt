@@ -1,0 +1,30 @@
+using System;
+
+// Create type delegate
+delegate void MyDelegateWazzap(string paramAd);
+
+    
+class Program {
+  
+    
+    static void WazzapMethod(string name)
+    {
+        Console.WriteLine("Hello " + name);
+    }
+    
+    static void NameMethod(string name)
+    {
+        Console.WriteLine(name + " are awesome");
+    }
+    
+    static void Main(string[] args) {
+        // Create delegate exemplars
+        MyDelegateWazzap wazzapDelegate = WazzapMethod;
+        MyDelegateWazzap nameDelegate = NameMethod;
+        
+        MyDelegateWazzap greeting = wazzapDelegate + nameDelegate;
+      
+        greeting("Nastia");
+        
+    }
+}
